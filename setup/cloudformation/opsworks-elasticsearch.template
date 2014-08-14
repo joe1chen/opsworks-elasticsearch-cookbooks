@@ -203,6 +203,23 @@
                             "allow_cluster_api": "true",
                             "port": 80
                         },
+                        "data" : {
+                            "devices" : {
+                                "/dev/sda2" : {
+                                    "file_system"      : "ext3",
+                                    "mount_options"    : "rw,user",
+                                    "mount_path"       : "/usr/local/var/data/elasticsearch/disk1",
+                                    "format_command"   : "mkfs.ext3",
+                                    "fs_check_command" : "dumpe2fs",
+                                    "ebs"            : {
+                                        "size"                  : 50,         // In GB
+                                        "delete_on_termination" : true,
+                                        "type"                  : "io1",
+                                        "iops"                  : 1000
+                                    }
+                                }
+                            }
+                        },
                         "cluster": {
                             "name": { "Ref": "ElasticsearchClusterName" }
                         },
@@ -228,7 +245,7 @@
                             }
                         },
                         "path": {
-                            "data": "/mnt/elasticsearch/data",
+                            "data": "/usr/local/var/data/elasticsearch/disk1",
                             "logs": "/mnt/elasticsearch/logs"
                         },
                         "cloud": {
@@ -242,7 +259,7 @@
                         "plugins" : {
                             "karmi/elasticsearch-paramedic" : {},
                             "lmenezes/elasticsearch-kopf" : {
-                                "version" : "0.5.7"
+                                "version" : "1.2"
                             },
                             "royrusso/elasticsearch-HQ" : {}
                         },
