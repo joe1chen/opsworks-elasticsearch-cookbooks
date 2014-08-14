@@ -393,7 +393,7 @@
                         "Ref": "searchLayer"
                     }
                 ],
-                "InstanceType": "m3.medium",
+                "InstanceType": "c3.large",
                 "AvailabilityZone": "us-east-1a",
                 "SshKeyName": {
                     "Ref": "SshKeyName"
@@ -412,7 +412,7 @@
                         "Ref": "searchLayer"
                     }
                 ],
-                "InstanceType": "m3.medium",
+                "InstanceType": "c3.large",
                 "AvailabilityZone": "us-east-1e",
                 "SshKeyName": {
                     "Ref": "SshKeyName"
@@ -431,7 +431,7 @@
                         "Ref": "searchLayer"
                     }
                 ],
-                "InstanceType": "m3.medium",
+                "InstanceType": "c3.large",
                 "AvailabilityZone": "us-east-1d",
                 "SshKeyName": {
                     "Ref": "SshKeyName"
