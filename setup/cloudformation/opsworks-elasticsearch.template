@@ -205,11 +205,11 @@
                         },
                         "data" : {
                             "devices" : {
-                                "/dev/sda2" : {
-                                    "file_system"      : "ext3",
+                                "/dev/xvda2" : {
+                                    "file_system"      : "ext4",
                                     "mount_options"    : "rw,user",
                                     "mount_path"       : "/usr/local/var/data/elasticsearch/disk1",
-                                    "format_command"   : "mkfs.ext3",
+                                    "format_command"   : "mkfs.ext4",
                                     "fs_check_command" : "dumpe2fs",
                                     "ebs"            : {
                                         "size"                  : 50,
@@ -246,7 +246,7 @@
                         },
                         "path": {
                             "data": "/usr/local/var/data/elasticsearch/disk1",
-                            "logs": "/mnt/elasticsearch/logs"
+                            "logs": "/usr/local/var/logs/elasticsearch"
                         },
                         "cloud": {
                             "aws": {
@@ -347,6 +347,8 @@
                         "elasticsearch::aws",
                         "elasticsearch::proxy",
                         "elasticsearch::plugins",
+                        "elasticsearch::ebs",
+                        "elasticsearch::data",
                         "java",
                         "opsworks-elasticsearch-custom::esplugins",
                         "opsworks-elasticsearch-custom::allocation-awareness",
@@ -359,9 +361,9 @@
                 "AutoAssignPublicIps": "true",
                 "VolumeConfigurations": [
                     {
-                        "MountPoint": "/mnt/elasticsearch",
+                        "MountPoint": "/usr/local/var/logs/elasticsearch",
                         "NumberOfDisks": 1,
-                        "Size": 100
+                        "Size": 20
                     }
                 ],
                 "CustomSecurityGroupIds": [
