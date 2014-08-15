@@ -44,3 +44,6 @@
 	path = elasticsearch
 	url = https://github.com/joe1chen/cookbook-elasticsearch.git
 	branch = elasticsearch-1.3
+[submodule "newrelic-sysmond"]
+	path = newrelic-sysmond
+	url = https://github.com/phlipper/chef-newrelic-sysmond.git
